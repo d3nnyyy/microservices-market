@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53633cd7-b24c-4412-89a8-7623fe9a63ad" name="Changes" comment="moved product, order and inventory services to one project, everything's working," />
+    <list default="true" id="53633cd7-b24c-4412-89a8-7623fe9a63ad" name="Changes" comment="moved product, order and inventory services to one project, everything's working">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,8 +43,20 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/inventory-service" />
+      <recent name="$PROJECT_DIR$/order-service" />
+      <recent name="$PROJECT_DIR$/product-service" />
+    </key>
+  </component>
   <component name="RunManager" selected="Spring Boot.ProductServiceApplication">
     <configuration name="OrderServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="order-service" />
@@ -84,7 +99,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1689066410573</updated>
-      <workItem from="1689066411828" duration="594000" />
+      <workItem from="1689066411828" duration="897000" />
     </task>
     <task id="LOCAL-00001" summary="moved product, order and inventory services to one project, everything's working,">
       <option name="closed" value="true" />
@@ -94,7 +109,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689066991142</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="moved product, order and inventory services to one project, everything's working">
+      <option name="closed" value="true" />
+      <created>1689067049864</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1689067049865</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +125,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="moved product, order and inventory services to one project, everything's working," />
-    <option name="LAST_COMMIT_MESSAGE" value="moved product, order and inventory services to one project, everything's working," />
+    <MESSAGE value="moved product, order and inventory services to one project, everything's working" />
+    <option name="LAST_COMMIT_MESSAGE" value="moved product, order and inventory services to one project, everything's working" />
   </component>
 </project>
