@@ -4,13 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53633cd7-b24c-4412-89a8-7623fe9a63ad" name="Changes" comment="added keycloak oauth2 security">
+    <list default="true" id="53633cd7-b24c-4412-89a8-7623fe9a63ad" name="Changes" comment="added sleuth and zipkin for distributed tracing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/ua/dtsebulia/inventoryservice/service/InventoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/ua/dtsebulia/inventoryservice/service/InventoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/ua/dtsebulia/orderservice/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/ua/dtsebulia/orderservice/controller/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-service/src/main/java/ua/dtsebulia/orderservice/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/ua/dtsebulia/orderservice/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +34,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="gateway" />
+        <entry key="$PROJECT_DIR$" value="circuit-braker" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -47,13 +54,14 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "circuit-braker",
+    "git-widget-placeholder": "distributed-tracing",
     "jdk.selected.JAVA_MODULE": "17",
     "last_opened_file_path": "/Users/denystsebulya/microservices-market/inventory-service",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.41245595",
@@ -143,9 +151,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.OrderServiceApplication" />
+        <item itemvalue="Spring Boot.ProductServiceApplication" />
         <item itemvalue="Spring Boot.InventoryServiceApplication" />
         <item itemvalue="Spring Boot.DiscoveryServerApplication" />
-        <item itemvalue="Spring Boot.ProductServiceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -160,7 +168,7 @@
       <workItem from="1689066411828" duration="8682000" />
       <workItem from="1689094333565" duration="38000" />
       <workItem from="1689094380547" duration="5722000" />
-      <workItem from="1689234992402" duration="5960000" />
+      <workItem from="1689234992402" duration="9282000" />
     </task>
     <task id="LOCAL-00001" summary="moved product, order and inventory services to one project, everything's working,">
       <option name="closed" value="true" />
@@ -218,7 +226,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689238917215</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added circuit breaker to avoid delays in communications between components">
+      <option name="closed" value="true" />
+      <created>1689245553571</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1689245553571</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,6 +248,8 @@
     <MESSAGE value="added eureka discovery service for communication without hardcoding urls" />
     <MESSAGE value="added api gateway for transferring the requests to certain urls" />
     <MESSAGE value="added keycloak oauth2 security" />
-    <option name="LAST_COMMIT_MESSAGE" value="added keycloak oauth2 security" />
+    <MESSAGE value="added circuit breaker to avoid delays in communications between components" />
+    <MESSAGE value="added sleuth and zipkin for distributed tracing" />
+    <option name="LAST_COMMIT_MESSAGE" value="added sleuth and zipkin for distributed tracing" />
   </component>
 </project>
